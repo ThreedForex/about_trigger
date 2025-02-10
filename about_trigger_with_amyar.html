@@ -1,0 +1,854 @@
+<html dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>پرایس اکشن به سبک آمیار</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: normal;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: black;
+	font-size: 14px;
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+/* i style */
+
+
+.toc-container {
+    max-width: 100%;
+    margin: 0px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.toc-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.toc {
+    border-top: 2px solid #007bff;
+    padding-top: 10px;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc ul li {
+    margin: 10px 0;
+}
+
+.toc ul li a {
+    display: block;
+    padding: 10px;
+    background: #e3f2fd;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.toc ul li a:hover {
+    background: #007bff;
+    color: white;
+}
+
+.toc ul ul {
+    padding-right: 20px;
+}
+
+.toc ul ul li a {
+    background: #d6e9ff;
+    font-size: 14px;
+}
+
+
+</style>
+
+
+</head><body><article id="194174ad-223a-8018-b6f6-eb4f57e284d2" class="page sans"><header><h1 class="page-title">پرایس اکشن به سبک آمیار</h1><p class="page-description"></p></header><div class="page-body"><p id="194174ad-223a-8158-ad06-dbe3a6a04fea" class=""><mark class="highlight-default"><mark class="highlight-blue_background">مروری بر نکات تریگر</mark></mark></p>
+
+<blockquote id="194174ad-223a-8012-b780-d01179de1396" class=""> افتخار و درود بر آنان که چراغ دانش را فروزان نگاه داشتند و بی‌دریغ علم  را به همگان بخشیدند<br/><br/><br/></blockquote><figure id="194174ad-223a-8004-a48b-c9fe2b20bb8a" class="image"><a href="banner.jpg"><img style="width:672px" src="banner.jpg"/></a></figure><p id="194174ad-223a-80c2-ab00-fdbb2b129263" class="">
+</p><p id="195174ad-223a-8007-81f4-c429f4ab60a7" class=""><strong>با درود و احترام به تمامی خوانندگان گرامی این پی‌دی‌اف،</strong></p><p id="195174ad-223a-80d0-a02b-cb22f8d7f7c6" class="">در این نوشتار تلاش شده است تا تمامی مباحث مرتبط با <strong>تریگر</strong> در این سبک، به‌صورت جامع و دقیق مورد بررسی قرار گیرد. این مجموعه با استناد به محتوای آموزشی <strong>مجموعه تریدی فارکس </strong>و بهره‌گیری از <strong>رفرنس‌های ویدیویی </strong>، گردآوری شده است تا بتواند به عنوان یک منبع کاربردی و مرجع برای علاقه‌مندان و فعالان این حوزه مورد استفاده قرار گیرد.</p><p id="195174ad-223a-80dc-a82b-e1aef8b5745e" class="">در این متن، علاوه بر تشریح اصول بنیادین <strong>تریگر</strong>، به تحلیل و بررسی <strong>، روش‌های شناسایی، شرایط ایده‌آل برای ورود، </strong>پرداخته شده است. همچنین، به‌منظور درک بهتر مفاهیم، از مثال‌های عملی، نمودارهای تحلیلی و توضیحات تکمیلی استفاده شده است.</p><p id="195174ad-223a-80f1-8888-e0c312fbdf3c" class="">هدف اصلی این مجموعه، ارائه‌ی <strong>یک منبع مدون و ساختاریافته</strong> است که به خوانندگان کمک کند تا با <strong>مبانی و تکنیک‌های کلیدی</strong> این سبک آشنا شوند و بتوانند با دیدگاهی روشن‌تر و علمی‌تر، تصمیمات بهتری در معاملات خود اتخاذ کنند. از این رو، پیشنهاد می‌شود که علاوه بر مطالعه‌ی این نوشتار، به رفرنس‌های ویدیویی ارائه‌شده نیز مراجعه کنید تا درک عمیق‌تری از مفاهیم به دست آورید.</p><p id="195174ad-223a-80c6-90b1-fd0dd5c11c62" class="">امید است که این پی‌دی‌اف بتواند به علاقه‌مندان این حوزه کمک کند و راهگشای مسیر یادگیری و پیشرفت آن‌ها باشد. از تمامی عزیزانی که پیشنهادات و انتقادات سازنده‌ای دارند، دعوت می‌شود که نظرات خود را با ما به اشتراک بگذارند تا در نسخه‌های بعدی، این مجموعه را هرچه پربارتر و کامل‌تر کنیم.</p><p id="195174ad-223a-809f-b79e-c1006339d755" class=""><strong>با آرزوی موفقیت و دانش‌افزایی روزافزون برای شما</strong> 🌿📖</p>
+	اگر افق‌های دور را دیده‌ام، به این دلیل است که بر قله‌های دانش آنان که چراغ علم را برای همگان برافروختند ایستاده‌ام.
+	<br/><br/>- ایزاک نیوتن<br/></blockquote><p id="195174ad-223a-80f3-8412-fb74f90ae13d" class="">
+</p><blockquote id="195174ad-223a-805d-846d-d76ca74b1456" class=""><strong>❤️ با تشکر از استاد عزیز آمیار</strong></blockquote>
+
+	<p id="195174ad-223a-8082-b15a-c1110b27968b" class="">
+		<time>@February 9, 2025</time> آخرین ویرایش<br/><br/> <br/></p><p id="195174ad-223a-8032-b1b3-f89a71b82509" class="">venshar  |  ونشار</p><p id="195174ad-223a-8088-82f2-d41c148c2457" class="">
+</p><p id="195174ad-223a-80d5-8142-fbd67311e052" class="">تریدی فارکس در پلتفرم ها</p><ul id="195174ad-223a-8037-8d95-edc9ff14b69b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.me/Three3D_Forex">https://t.me/Three3D_Forex</a></li></ul><ul id="195174ad-223a-80e9-99ba-ec073f44b27a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.youtube.com/@3DForex">https://www.youtube.com/@3DForex</a></li></ul><p id="195174ad-223a-80c2-a144-d364aebd3183" class=""><div class="indented"><p id="195174ad-223a-80b4-b0d1-d8ae6417defe" class="">راه های ارتباطی برای پیشنهادات بهبود این پی دی اف</p><ul id="195174ad-223a-8074-b5ab-cd6eec3717ff" class="bulleted-list"><li style="list-style-type:disc"><a href="https://t.me/venshar_l">https://t.me/venshar_l</a><ul id="195174ad-223a-803e-a663-dde56ee9baba" class="bulleted-list"><li style="list-style-type:circle"><a href="mailto:vensharrr@proton.me">mailto:vensharrr@proton.me</a></li></ul></li></ul><p id="195174ad-223a-8013-b336-ed2ec59593ef" class="">
+
+<!-- </p></div></p><p id="194174ad-223a-8191-aa18-d4c6baadc20c" class="">فهرست</p><nav id="194174ad-223a-81ac-a4c6-d57858ba48c5" class="block-color-default table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#194174ad-223a-81c7-bfb7-caaf84cb24b8"><mark class="highlight-blue">تایم فریم ساختار</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#194174ad-223a-81e8-90df-f205e921188c"><mark class="highlight-blue">ساختار تایم فریم و تریگر</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#194174ad-223a-803e-8b7a-cdc559ab0ad8"><mark class="highlight-blue">پیش نیاز ها<br/><br/></mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#194174ad-223a-80b7-be50-f1568346c656"><mark class="highlight-blue">ستاپ اصلاح قیمتی</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-8041-a29b-f68fd0743f95"><strong>تعریف ستاپ اصلاح قیمتی</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-804c-aaab-d8e6ce1332fe"><strong>ویژگی‌های ستاپ اصلاح قیمتی:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-8001-a7ca-c782f1a6722f"><strong>مثال از ستاپ اصلاح قیمتی در روند صعودی:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-809a-adbd-c0a82d3df23f">خلاصه:</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-804b-b7ae-c5d81b717bf8">ستاپ اصلاح قیمتی&gt;&gt;<mark class="highlight-purple">پولبک بعد شکست<br/><br/><br/></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-80e7-baaf-d0ce7a75fd2a">نمونه های تصویری<br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-8033-8dad-fecec51336e4"> ستاپ اصلاح قیمتی &gt;&gt; <mark class="highlight-purple">بدون پولبک مینور بعد شکست یا قبل شکست</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-808f-b3e3-c0be324d25e8">نمونه شماتیک</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-80e6-b708-e77ad278c424">ستاپ اصلاح قیمتی &gt;&gt; <mark class="highlight-purple">پولبک قبل شکست<br/><br/></mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-80d8-9257-ff0509da9b38"><strong>جدول تایم فریم‌های روند، ساختار، تریگر و تریگر فراکتالی</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-8096-8d50-d4274cfaf3a0">نمونه شماتیک</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-8048-ac22-d03d7cc11c25">نمونه های معاملاتی<br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#194174ad-223a-8161-b54d-cdd872ed5622">ستاپ فالس بریک اوت</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#194174ad-223a-80ee-a76c-c23dfbbef126"><strong>ستاپ فالس بریک‌اوت (False Breakout Setup)</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#194174ad-223a-8089-9000-dbb27d357661"><strong>🔹 تعریف فالس بریک‌اوت:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#194174ad-223a-8041-9a24-dfee336f5fbf"><strong>🔹 ویژگی‌های فالس بریک‌اوت:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#194174ad-223a-80b9-ae5e-d132d38bdd75"><strong>🔹 انواع فالس بریک‌اوت:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#194174ad-223a-804b-a8e0-ce2a477fefe9"><strong>🔹 استراتژی معامله با فالس بریک‌اوت:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#194174ad-223a-800b-adcf-e28cc0a52cc5"><strong>🔹 نتیجه‌گیری:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#194174ad-223a-80b9-92ec-f6520ff05855">نمونه شماتیک از فالس بریک اوت در کانال صعودی<br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-8044-8219-c0eaa924ff4f">ستاپ فالس بریک اوت&gt;&gt;<mark class="highlight-purple">پولبک بعد شکست</mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-809a-bd34-f740e7016ce5">نمونه شماتیک از پولبک بعد شکست در ستاپ فالس بریک اوت<br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-805b-a8c5-e9a5e33b2972">نمونه شماتیک از ورود با واکنش به 50/61 درصد پولبک</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-80d0-8c19-d99d61143eb0">سوال: تایم تریگر در ستاپ فالس بریک اوت میتواند دو تایم فریم پایین تر باشد؟ اگر اره با چه شرایطی</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-8088-a25f-dfbe6d8a7e95">نمونه شماتیک<br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-80cd-b72c-e503028195bc">نمونه معاملاتی از واکشن به 50 /61 درصد <br/><br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-80cc-bf30-f2ba83d3c73e">ستاپ فالس بریک اوت &gt;&gt; <mark class="highlight-purple">عبور از سقف پولبک یا حرکت تا 90 درصد<br/><br/><br/><br/></mark><mark class="highlight-default">ما همیشه منتظر واکنش مینور تریگر میمانیم که قیمت واکنش بدهد و تریگر تایید شود ولی در مواقعی هیچ واکنش مینور شکل نمیگره که در اینجا به این موضوع خواهیم پرداخت که چگونه میتوانیم در این مواقعه ستاپ بگیریم<br/><br/><br/>نمونه شماتیک<br/></mark><mark class="highlight-purple"><br/><br/><br/></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-808a-b24a-ce8babb08233">نمونه معاملاتی<br/><br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-8084-9f45-e7f8c4a38596">ستاپ فالس بریک اوت&gt;&gt;<mark class="highlight-purple">پولبک قبل شکست<br/><br/></mark></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-8007-aff8-ebeaf10c2d72">نمونه شماتیک<br/><br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-80c7-962d-c196ec24f6aa">نمونه معاملاتی</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-802a-9052-f5e3dbcf5d05">ستاپ فالس بریک اوت&gt;&gt; <mark class="highlight-purple">پولبک اصلاح قیمتی</mark><br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-8099-9119-f85e2c9d9e1b">نمونه شماتیک<br/><br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-80b3-964b-cbda71cdc91f">نمونه معاملاتی<br/><br/></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#195174ad-223a-80fc-a71c-f072dfc7e7ef"><strong>با آرزوی موفقیت برای شما در مسیر یادگیری و پیشرفت</strong> 🌱📖✨</a></div></nav><p id="194174ad-223a-81cc-a816-d77506c39d5e" class=""> </p><p id="194174ad-223a-8025-aa37-c1c9a7b25ac4" class=""> -->
+
+	<div class="toc-container">
+        <p class="toc-title">📌 فهرست</p>
+        
+        <div class="toc-item">
+            <a href="#194174ad-223a-81c7-bfb7-caaf84cb24b8">📌 تایم فریم ساختار</a>
+        </div>
+
+        <div class="toc-item">
+            <a href="#194174ad-223a-81e8-90df-f205e921188c">📌 ساختار تایم فریم و تریگر</a>
+        </div>
+
+        <div class="toc-item">
+            <a href="#194174ad-223a-80b7-be50-f1568346c656">📌 ستاپ اصلاح قیمتی</a>
+            <div class="toc-subitem"><a href="#194174ad-223a-8041-a29b-f68fd0743f95">🔹 تعریف ستاپ اصلاح قیمتی</a></div>
+            <div class="toc-subitem"><a href="#194174ad-223a-804c-aaab-d8e6ce1332fe">🔹 ویژگی‌های ستاپ اصلاح قیمتی</a></div>
+            <div class="toc-subitem"><a href="#194174ad-223a-8001-a7ca-c782f1a6722f">🔹 مثال از ستاپ اصلاح قیمتی در روند صعودی</a></div>
+        </div>
+
+        <div class="toc-item">
+            <a href="#194174ad-223a-8161-b54d-cdd872ed5622">📌 ستاپ فالس بریک اوت</a>
+            <div class="toc-subitem"><a href="#194174ad-223a-80ee-a76c-c23dfbbef126">🔹 تعریف فالس بریک‌اوت</a></div>
+            <div class="toc-subitem"><a href="#194174ad-223a-8089-9000-dbb27d357661">🔹 ویژگی‌های فالس بریک‌اوت</a></div>
+            <div class="toc-subitem"><a href="#194174ad-223a-804b-a8e0-ce2a477fefe9">🔹 استراتژی معامله با فالس بریک‌اوت</a></div>
+        </div>
+
+        <div class="toc-item">
+            <a href="#195174ad-223a-80b9-92ec-f6520ff05855">📌 نمونه‌های تصویری</a>
+        </div>
+
+        <div class="toc-item">
+            <a href="#195174ad-223a-80fc-a71c-f072dfc7e7ef">پایان</a>
+        </div>
+
+    </div>
+
+</p><p id="194174ad-223a-809d-a0b4-ff38475bddd6" class="">
+</p>
+<div class="test_page">
+
+	<h2 id="194174ad-223a-81c7-bfb7-caaf84cb24b8" class=""><mark class="highlight-blue">تایم فریم ساختار</mark></h2>
+	<hr id="194174ad-223a-814c-9c01-d1dfe946a9fe"/>
+	<p id="194174ad-223a-8198-a229-e2b85a93c06b" class=""> </p><p id="194174ad-223a-8075-869f-fa01f4d04395" class="">در سبک <strong>پرایس اکشن</strong>، اولین گام تشخیص روند در <strong>تایم فریم انتخابی</strong> است. به عنوان مثال، اگر در <strong>تایم فریم روزانه</strong> روند قیمت نزولی باشد و درون یک <strong>الگو</strong> قرار داشته باشد، ابتدا باید این الگو را شناسایی کنیم. با تشخیص الگو، روند حرکت قیمت نیز مشخص می‌شود.</p><p id="194174ad-223a-801d-bc52-ee82b00ea25f" class="">هر الگو شامل نقاطی است که قیمت پس از برخورد به آن‌ها تغییر مسیر داده است. این نقاط کلیدی را <strong>پیوت‌های ماژور</strong> می‌نامیم، زیرا تغییر روند‌های مهمی را ایجاد کرده‌اند. پس از شناسایی <strong>پیوت‌های ماژور</strong> در تایم فریم روند، به سراغ نقاطی می‌رویم که قیمت نسبت به آن‌ها واکنش‌های کوچکتری نشان داده و تأثیر قابل توجهی بر روند کلی نداشته‌اند. این نقاط را <strong>پیوت‌های مینور</strong> می‌نامیم.</p><p id="194174ad-223a-809c-b640-de56217971b9" class="">از آنجایی که واکنش‌های قیمت به <strong>پیوت‌های مینور</strong> معمولاً جزئی‌تر هستند، برای رسم دقیق آن‌ها باید به <strong>تایم فریمی پایین‌تر</strong> از تایم فریم روند مراجعه کنیم. سپس، منتظر واکنش دوباره قیمت به این سطوح می‌مانیم. در مجموع، <strong>پیوت‌های مینور</strong> به عنوان <strong>پیوت‌های ساختاری</strong> یا <strong>تایم فریم ساختار</strong> شناخته می‌شوند و باید تمامی فاکتورهای مرتبط از جمله <strong>شکست‌ها</strong> و <strong>تریگرها</strong> را در <strong>تایم فریم مناسب خود</strong> بررسی کنیم.</p><p id="194174ad-223a-8062-8f13-cc6924e4db61" class="">
+	</p>
+	<figure id="194174ad-223a-8081-924f-eeb728440066" class="image"><a href="image.png"><img style="width:709.984375px" src="image.png"/></a></figure><p id="194174ad-223a-803a-9ed8-f4091175fb35" class="">
+	</p><hr id="194174ad-223a-8024-9edb-dbd49ffa2bc6"/><p id="194174ad-223a-805c-bccb-c51a873a6278" class="">
+</div>
+
+</p>
+<div class="test_page">
+
+	<h2 id="194174ad-223a-81e8-90df-f205e921188c" class=""><mark class="highlight-blue">ساختار تایم فریم و تریگر</mark></h2>
+	<p id="194174ad-223a-8002-925b-e94f19c15506" class=""><mark class="highlight-default">به صورت کلی سه تایم فریم داریم تایم فریم روند ساختار و تریگر و هر تایم فریمی یک تایم فریم پایین تر از تایم فریمی بالای خود هست و به صورت </mark><mark class="highlight-default"><a href="https://fa.wikipedia.org/wiki/%D9%81%D8%B1%D8%A7%DA%A9%D8%AA%D8%A7%D9%84">فراکتال </a></mark><mark class="highlight-default">این تایم فریم ها ادامه دارند در جدول زیر یک نمونه از تایم فریم ها بر اساس روند ساختار و تریگر اورده شدند</mark><mark class="highlight-blue"><mark class="highlight-default_background"><br/><br/></mark></mark></p><div><table id="194174ad-223a-8029-ac2e-e804c91660e6" class="simple-table"><tbody><tr id="194174ad-223a-8010-ae5c-c479ca050398"><td id="RKuv" class="" style="width:172.5px">تایم روند</td><td id="W|mB" class="" style="width:172.5px">1D</td><td id="kFeo" class="" style="width:172.5px">4H</td><td id="UP|s" class="" style="width:172.5px">1H</td></tr><tr id="194174ad-223a-8077-b6a5-e0b28b10567b"><td id="RKuv" class="" style="width:172.5px">تایم ساختار</td><td id="W|mB" class="" style="width:172.5px">4H</td><td id="kFeo" class="" style="width:172.5px">1H</td><td id="UP|s" class="" style="width:172.5px">15/30M</td></tr><tr id="194174ad-223a-809b-8fe0-f250e57c8f08"><td id="RKuv" class="" style="width:172.5px">تایم تریگر</td><td id="W|mB" class="" style="width:172.5px">1H</td><td id="kFeo" class="" style="width:172.5px">30M</td><td id="UP|s" class="" style="width:172.5px">5/15M</td></tr></tbody></table></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="194174ad-223a-80ad-bf63-d71a92aa19e4"><div style="font-size:1.5em"><span class="icon">🔔</span></div><div style="width:100%"><p id="194174ad-223a-8065-a165-c1ddd0021191" class=""><mark class="highlight-red"><mark class="highlight-default_background">تایم تریگر همواره یک تایم فریم پایین‌تر از تایم ساختار است، به استثنای ستاپ فالس بریک اوت<br/><br/><br/></mark></mark><a href="https://youtu.be/9F_Anm3t8Ug?si=SlMA0dPyeTjMh6EB">https://youtu.be/9F_Anm3t8Ug?si=SlMA0dPyeTjMh6EB</a><br/>دقیقه 23:50<br/></p></div></figure><p id="194174ad-223a-81a3-97fd-d90f88880358" class=""><mark class="highlight-blue"><mark class="highlight-default_background"><br/> فهرست منابع<br/></mark></mark></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="194174ad-223a-8006-a629-c760bb331caa"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="194174ad-223a-8031-9fde-dde13a09aae9" class="">جلسه سوم مبحث مولتی تایم فریم<br/><br/><br/></p><figure id="194174ad-223a-80e2-80e2-ffd8cd77fe0f"><div class="source"><a href="https://www.youtube.com/watch?v=2ztI3whXslY&amp;list=PLIrUFalA2o4nGjpPdjksJ7gj7XC7aUOYW&amp;index=3">https://www.youtube.com/watch?v=2ztI3whXslY&amp;list=PLIrUFalA2o4nGjpPdjksJ7gj7XC7aUOYW&amp;index=3</a></div></figure></div></figure><hr id="194174ad-223a-8031-aa6a-d476478713eb"/><h1 id="194174ad-223a-803e-8b7a-cdc559ab0ad8" class=""><mark class="highlight-blue">پیش نیاز ها<br/><br/></mark></h1><ul id="194174ad-223a-8052-909a-e0d784b9adbf" class="bulleted-list"><li style="list-style-type:disc">تنظیم نقطه ورودو استاپ و تی پی بعد عبور یا نفوذ از سقف پولبک بعد شکست <br/><br/><a href="https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20">https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20</a><br/>دقیقه 22:20<br/><br/></li></ul><ul id="194174ad-223a-808f-81ef-cfc33812767d" class="bulleted-list"><li style="list-style-type:disc">کندل پین بار<br/><br/><a href="https://youtu.be/bCtLEaKU-7U?si=AOMjhvvKgP_xmwOl">https://youtu.be/bCtLEaKU-7U?si=AOMjhvvKgP_xmwOl</a><br/>دقیقه 6:40<br/></li></ul><p id="194174ad-223a-80c8-a9df-f88a79b09b13" class="">
+</div>
+</p><p id="194174ad-223a-80fd-a18b-d4398d422ba8" class="">
+</p><p id="194174ad-223a-80bf-b627-d66a30870e74" class="">
+</p><hr id="194174ad-223a-80b9-acd7-d7d50d15cbed"/><p id="194174ad-223a-80be-9fe8-d8542ed1de8a" class="">
+</p>
+<div class="test_page">
+
+	<h1 id="194174ad-223a-80b7-be50-f1568346c656" class=""><mark class="highlight-blue">ستاپ اصلاح قیمتی</mark></h1><h3 id="194174ad-223a-8041-a29b-f68fd0743f95" class=""><strong>تعریف ستاپ اصلاح قیمتی</strong></h3><p id="194174ad-223a-802d-8512-fdbd5d6961c8" class=""><strong>ستاپ اصلاح قیمتی</strong> (Retracement Setup) به وضعیتی در نمودار قیمتی گفته می‌شود که در آن، قیمت پس از یک حرکت پرقدرت در جهت روند اصلی، وارد یک <strong>اصلاح موقتی</strong> شده و در یک محدوده خاص متوقف می‌شود. این اصلاح معمولاً به دلیل <strong>کاهش موقت قدرت خریداران یا فروشندگان</strong> رخ می‌دهد و فرصتی برای ورود دوباره به روند اصلی ایجاد می‌کند.</p><h3 id="194174ad-223a-804c-aaab-d8e6ce1332fe" class=""><strong>ویژگی‌های ستاپ اصلاح قیمتی:</strong></h3><ol type="1" id="194174ad-223a-8044-aabe-c543e007240a" class="numbered-list" start="1"><li><strong>برخلاف روند اصلی نیست، بلکه موقت است</strong> – اصلاح قیمتی یک <strong>پولبک</strong> درون روند اصلی محسوب می‌شود و نشانه‌ای از تغییر روند کلی بازار نیست.</li></ol><ol type="1" id="194174ad-223a-8011-a05e-e4fab2861901" class="numbered-list" start="2"><li><strong>در محدوده‌های حمایتی و مقاومتی اتفاق می‌افتد</strong> – قیمت معمولاً به سطوح کلیدی مانند <strong>فیبوناچی اصلاحی، خطوط روند، میانگین متحرک</strong> یا نواحی عرضه و تقاضا واکنش نشان می‌دهد.</li></ol><ol type="1" id="194174ad-223a-80d9-b525-d0566d2110be" class="numbered-list" start="3"><li><strong>حجم معاملات کاهش می‌یابد</strong> – در زمان اصلاح، معمولاً حجم معاملات کمتر از موج حرکتی قبل از آن است که نشان‌دهنده ضعف در اصلاح و احتمال ادامه روند اصلی است.</li></ol><ol type="1" id="194174ad-223a-8074-83c7-ccb75f02f7dd" class="numbered-list" start="4"><li><strong>پس از اصلاح، قیمت حرکت پرقدرتی در جهت روند می‌کند</strong> – پس از اتمام اصلاح، بازار با افزایش حجم و قدرت، روند قبلی را ادامه می‌دهد.</li></ol><h3 id="194174ad-223a-8001-a7ca-c782f1a6722f" class=""><strong>مثال از ستاپ اصلاح قیمتی در روند صعودی:</strong></h3><p id="194174ad-223a-80ed-af6a-f9a082b5d0d2" class="">🔹 قیمت در یک روند صعودی، از <strong>100 به 150 دلار</strong> افزایش می‌یابد.</p><p id="194174ad-223a-80fb-a223-d4475ac164da" class="">🔹 سپس وارد اصلاح شده و تا <strong>سطح 130 دلار</strong> کاهش پیدا می‌کند.</p><p id="194174ad-223a-807a-a8d3-e69ea71c873b" class="">🔹 اگر این اصلاح در محدوده <strong>فیبوناچی 38.2٪ تا 61.8٪</strong> متوقف شود و کندل‌های بازگشتی مانند <strong>پین بار یا اینگالفینگ</strong> شکل بگیرند، این یک <strong>ستاپ اصلاحی مناسب برای ورود به معامله خرید</strong> خواهد بود.<br/><br/><br/></p><h3 id="194174ad-223a-809a-adbd-c0a82d3df23f" class="">خلاصه:</h3><p id="194174ad-223a-8042-a388-fcf4b22eddf1" class="">وقتی در ستاپ‌های معاملاتی پولبک بریک‌اوت و بریک‌اوت پولبک، قیمت به زون احترام می‌گذارد و برخوردهای ملایمی دارد (<a href="https://www.notion.so/194174ad223a8018b6f6eb4f57e284d2?pvs=21">تصویر شماره یک</a>)، ولی در ستاپ اصلاح قیمتی، قیمت به دلیل قدرت مارکت و ساختار تایم‌فریمی، زون را به سمت روند می‌شکند و دوباره برمی‌گردد و در جهت خلاف روند، زون را مجدداً می‌شکند<br/><br/><br/>نمونه پولبک های قبل و بعد شکست<br/><br/></p><figure id="194174ad-223a-80b8-b8b8-f600c0b3a20d" class="image"><a href="image%201.png"><img style="width:709.96875px" src="image%201.png"/></a><figcaption>تصویر شماره یک پولبک قبل و بعد شکست<br/><br/><br/></figcaption></figure><p id="194174ad-223a-80e6-993e-e2c23b131cfd" class="">نمونه پولبک اصلاح قیمتی<br/><br/><br/></p><figure id="194174ad-223a-80c0-b70e-c24d957cb016" class="image"><a href="image%202.png"><img style="width:709.984375px" src="image%202.png"/></a><figcaption>پولبک اصلاح قیمتی</figcaption></figure><p id="194174ad-223a-806a-a97a-f24788ede662" class="">
+	</p><p id="194174ad-223a-801f-b702-e19acb15a395" class=""><br/><br/></p><h3 id="194174ad-223a-804b-b7ae-c5d81b717bf8" class="">ستاپ اصلاح قیمتی&gt;&gt;<mark class="highlight-purple">پولبک بعد شکست<br/><br/><br/></mark></h3><p id="194174ad-223a-801a-800d-f3ce3ffd9983" class="">وقتی قیمت یک زون رو میشکنه و اصلاح قیمتی میکنه و دوباره به روند خود ادامه میده و از زون مجدد به سمت روند عبور میکنه و در مسیر حرکت هیچ اصلاحی نمیکنه باید منتظر یک پولبک حداقل 38 درصد نسبت به موج ایمپالس حرکتی بمانیم و با عبور یا نفوذ قیمت با شادو از سقف پولبک نقطه ورود رو بر اساس استاپ و تی پی و ریسک به ریوارد تنظیم کنیم به امید اینکه قیمت بعد عبور یا نفوذ از سقف پولبک برگرده و نقطه ورود مارو فعال کنه<br/><br/></p><p id="194174ad-223a-8089-9ade-ed04aad67720" class="">
+</div>
+</p><figure id="194174ad-223a-80f6-afbf-ec33513646d2" class="image"><a href="image%203.png"><img style="width:709.96875px" src="image%203.png"/></a><figcaption>پولبک بعد شکست در ستاپ اصلاح قیمتی</figcaption></figure><h3 id="194174ad-223a-80e7-baaf-d0ce7a75fd2a" class="">نمونه های تصویری<br/><br/></h3><figure id="194174ad-223a-80e2-aeee-f1374eee1b8d" class="image"><a href="image%204.png"><img style="width:709.984375px" src="image%204.png"/></a></figure><p id="194174ad-223a-8055-91f4-ddb7bd447e83" class=""><br/><br/></p><figure id="194174ad-223a-8036-93e5-ddae7fa2fd1c" class="image"><a href="image%205.png"><img style="width:709.984375px" src="image%205.png"/></a><figcaption>نایم فریم ساختار 30 دقیقه<br/><br/></figcaption></figure><p id="194174ad-223a-8009-9fd5-d477a324dfd2" class="">
+</p>
+<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+	id="194174ad-223a-80c5-b4a9-ea10ea70ac38">
+	<div style="font-size:1.5em"><span class="icon">📽️</span></div>
+	<div style="width:100%">
+		<p id="194174ad-223a-8077-97c6-c7492712b771" class="">نمونه ها</p>
+		<ul id="194174ad-223a-80b5-b2fb-e893edca321c" class="bulleted-list">
+			<li style="list-style-type:disc">ستاپ اصلاح قیمتی<br />تایم ساختار 15 دقیقه<br />تریگر 5 دقیقه پولبک بعد
+				شکست<br /><br /><a
+					href="https://youtu.be/9F_Anm3t8Ug?si=V-FoqZusVrhxzvZZ">https://youtu.be/9F_Anm3t8Ug?si=V-FoqZusVrhxzvZZ</a><br />دقیقه
+				31:15<br /><br /></li>
+		</ul>
+		<ul id="194174ad-223a-80b6-bd5c-d85d9399be5b" class="bulleted-list">
+			<li style="list-style-type:disc">ستاپ اصلاح قیمتی<br />تایم ساختار 15 دقیقه<br />تایم تریگر 5 دقیقه پولبک
+				قبل شکست و بعد شکست و انگلف پولبک بعد شکست<br /><br /><a
+					href="https://youtu.be/EzWwtGo0zAo?si=t_a9DJe4_JY_y9LJ">https://youtu.be/EzWwtGo0zAo?si=t_a9DJe4_JY_y9LJ</a><br />دقیقه
+				14:20<br /></li>
+		</ul>
+		<p id="194174ad-223a-8000-9ca1-d0a47f83573f" class="">
+</p><ul id="194174ad-223a-8072-8651-c25bf434c14a" class="bulleted-list"><li style="list-style-type:disc">ستاپ اصلاح قیمتی<br/>تایم ساختار 30<br/>تایم تریگر 15 / پولبک بعد شکست<br/><br/><a href="https://youtu.be/mlDT4k7HrpQ?si=FSVap-EGGhAfNNrC">https://youtu.be/mlDT4k7HrpQ?si=FSVap-EGGhAfNNrC</a><br/>دقیقه 14:00<br/></li></ul><p id="194174ad-223a-8026-9b06-e205d3c24648" class="">
+</p></div></figure><p id="194174ad-223a-80ef-802b-fba021ccff8c" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="194174ad-223a-8084-b18b-e988e3d44ed4"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="194174ad-223a-800d-a204-db64c7a25249" class="">منابع<br/><br/><br/></p><ul id="194174ad-223a-8027-837a-c8f3591fdae9" class="bulleted-list"><li style="list-style-type:disc">اصلاح حداقل 38 درصد پولبک بعد شکست<br/><br/><a href="https://youtu.be/cfqRiSTPAUc?si=gIZSZUnwVdoRCEF-">https://youtu.be/cfqRiSTPAUc?si=gIZSZUnwVdoRCEF-</a><br/>دقیقه 14:28<br/></li></ul><ul id="194174ad-223a-804d-887f-d94c767efc9a" class="bulleted-list"><li style="list-style-type:disc">تنظیم نقطه ورودو استاپ و تی پی بعد عبور یا نفوذ از سقف پولبک بعد شکست <br/><br/><a href="https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20">https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20</a><br/>دقیقه 22:20<br/></li></ul><ul id="194174ad-223a-80b8-bf5f-d0241a5e63ff" class="bulleted-list"><li style="list-style-type:disc">توضیحات جامع <br/><br/><a href="https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20">https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20</a><br/>دقیقه 12:50<br/></li></ul><p id="194174ad-223a-807a-a127-f39556a5ad67" class="">
+</p></div></figure><h3 id="194174ad-223a-8033-8dad-fecec51336e4" class=""> ستاپ اصلاح قیمتی &gt;&gt; <mark class="highlight-purple">بدون پولبک مینور بعد شکست یا قبل شکست</mark></h3><p id="194174ad-223a-808e-bc49-f0a3bd889d62" class="">طبق مطالب فوق انتظار میره که قیمت بعد شکست پولبک بزنه و بشه موقعیت گرفت ولی در مواقعی قیمت بدون پولبک مینور به مسبر خود ادامه میده و اینجا دو قانون داریم اگر قیمت تا 90 درصد پولبک اصلی ماژور حرکت کرد یا از سقف پولبک ماژور اصلی عبور یا نفوذ کرد میتوانیم نقطه ورود تنظیم کرد به امید برگشت قیمت برای اصلاح ماژور و فعال کردن نقطه ورود</p><p id="194174ad-223a-8025-ae4a-db6b3077c27e" class="">
+</p><h3 id="194174ad-223a-808f-b3e3-c0be324d25e8" class="">نمونه شماتیک</h3><figure id="194174ad-223a-80f2-9dc7-cf7c13f591d1" class="image"><a href="image%206.png"><img style="width:709.94140625px" src="image%206.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="194174ad-223a-80f2-8c41-ef59f447aa18"><div style="font-size:1.5em"><span class="icon">🚨</span></div><div style="width:100%"><p id="194174ad-223a-80d3-9d2a-c20834e7cf31" class=""><mark class="highlight-red">توجه اگر قیمت بدون پولبک مینور تا 3/4 مسیر تی پی حرکت کرد این روش کنسل میشود<br/><br/><br/></mark><mark class="highlight-default">این مورد رو میتوان در بحث بریک ایون دنبال کرد</mark></p><p id="194174ad-223a-80ea-ae3a-c36c3454e794" class=""><mark class="highlight-red"><br/><br/></mark><a href="https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20">https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20</a><br/>دقیقه 36:50<br/></p></div></figure><figure id="194174ad-223a-8000-985b-dd9d7a9e2192" class="image"><a href="image%207.png"><img style="width:709.9609375px" src="image%207.png"/></a></figure><figure id="194174ad-223a-8084-a284-e467529aa53d" class="image"><a href="image%208.png"><img style="width:709.94140625px" src="image%208.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="194174ad-223a-806c-bc1d-c50d69973016"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="194174ad-223a-808e-9287-dda7fd2ed0f4" class="">منبع<br/><br/><br/><a href="https://www.youtube.com/watch?v=bCtLEaKU-7U&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=21">https://www.youtube.com/watch?v=bCtLEaKU-7U&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=21</a><br/>دقیقه 6:00<br/></p></div></figure><h3 id="194174ad-223a-80e6-b708-e77ad278c424" class="">ستاپ اصلاح قیمتی &gt;&gt; <mark class="highlight-purple">پولبک قبل شکست<br/><br/></mark></h3><p id="194174ad-223a-805a-b40a-d7993fbbd4f1" class="">وقتی قبل شکست مجدد زون تایم ساختار پولبک قابل مشاهده در تایم ساختار یا تریگر ساختار داشته باشیم میتوانیم با دیدیگاه فراکتالی نسبت به تایم تریگر یک تایم پایین تر بریم به عنوان مثال اگر تایم ساختار 1ساعته باشد و تریگر 30 دقیقه و قبل شکست مجدد زون ساختار در جهت روند پولبک قبل شکست داشته باشیم میتوان به تریگر 30 دقیقه یعنی 15 دقیقه رفت</p><h3 id="194174ad-223a-80d8-9257-ff0509da9b38" class=""><strong>جدول تایم فریم‌های روند، ساختار، تریگر و تریگر فراکتالی</strong></h3><table id="194174ad-223a-80c8-b163-c4154cd5727b" class="simple-table"><tbody><tr id="194174ad-223a-80da-8f10-d9e9511997dd"><td id="|UEI" class=""><strong>تایم روند</strong></td><td id="=TVN" class=""><strong>تایم ساختار</strong></td><td id="BH=O" class=""><strong>تایم تریگر</strong></td><td id="qs&lt;F" class=""><strong>تایم تریگر فراکتالی</strong></td></tr><tr id="194174ad-223a-808e-983f-f425c11b1638"><td id="|UEI" class="">1D (روزانه)</td><td id="=TVN" class="">4H (4 ساعته)</td><td id="BH=O" class="">1H (1 ساعته)</td><td id="qs&lt;F" class="">30M (30 دقیقه)</td></tr><tr id="194174ad-223a-80c8-a60f-d49699138338"><td id="|UEI" class="">4H (4 ساعته)</td><td id="=TVN" class="">1H (1 ساعته)</td><td id="BH=O" class="">30M (30 دقیقه)</td><td id="qs&lt;F" class="">15M (15 دقیقه)</td></tr><tr id="194174ad-223a-80ec-b3dc-d8eb8c621585"><td id="|UEI" class="">1H (1 ساعته)</td><td id="=TVN" class="">30M (30 دقیقه)</td><td id="BH=O" class="">15M (15 دقیقه)</td><td id="qs&lt;F" class="">5M (5 دقیقه)</td></tr><tr id="194174ad-223a-805b-bff9-e1c8ccfcef56"><td id="|UEI" class="">30M (30 دقیقه)</td><td id="=TVN" class="">15M (15 دقیقه)</td><td id="BH=O" class="">5M (5 دقیقه)</td><td id="qs&lt;F" class="">3M / 1M</td></tr><tr id="194174ad-223a-80e7-9904-d06aa88e6baf"><td id="|UEI" class="">15M (15 دقیقه)</td><td id="=TVN" class="">5M (5 دقیقه)</td><td id="BH=O" class="">3M (3 دقیقه)</td><td id="qs&lt;F" class="">1M (1 دقیقه)</td></tr></tbody></table><h3 id="194174ad-223a-8096-8d50-d4274cfaf3a0" class="">نمونه شماتیک</h3><figure id="194174ad-223a-808c-a23c-ffc846446e74" class="image"><a href="image%209.png"><img style="width:709.921875px" src="image%209.png"/></a></figure><figure id="194174ad-223a-803a-ad36-cc265fa987c9" class="image"><a href="image%2010.png"><img style="width:709.9609375px" src="image%2010.png"/></a></figure><h3 id="194174ad-223a-8048-ac22-d03d7cc11c25" class="">نمونه های معاملاتی<br/><br/></h3><p id="194174ad-223a-80ba-913c-f0f7e587c101" class=""><mark class="highlight-gray">تایم فریم ساختار 30 دقیقه</mark></p><p id="194174ad-223a-80e6-af03-c90024e5c5d4" class=""><mark class="highlight-gray">قیمت قبل شکست پولبک زده بود و برای همین یک تایم پایین تر یعنی 5 دقیقه رفتیم و قیمت بعد شکست هم پولبک زد و با انگلف پولبک بعد شکست نقطه ورود تنظیم کردیم.</mark></p><figure id="194174ad-223a-80b9-9036-cf0426d50855" class="image"><a href="image%2011.png"><img style="width:709.9609375px" src="image%2011.png"/></a></figure><figure id="194174ad-223a-8070-a378-c7f41f632aa7" class="image"><a href="image%2012.png"><img style="width:709.94140625px" src="image%2012.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="194174ad-223a-8097-b57c-caeaac3c8a24"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="194174ad-223a-80dc-ba59-c1459f07b277" class="">منابع</p><ul id="194174ad-223a-80ff-a1ed-ed3c726574a9" class="bulleted-list"><li style="list-style-type:disc">توضیحات کامل<br/><br/><a href="https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20">https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20</a><br/>15:30 دقیقه<br/></li></ul><p id="194174ad-223a-806a-8497-e06e3721cbc8" class="">
+</p><ul id="194174ad-223a-8020-ac7c-dab404c963d2" class="bulleted-list"><li style="list-style-type:disc">پولبک اصلاح قیمتی<br/>تایم ساختار 30 دقیقه<br/>تایم تریگر 15 دقیقه<br/>توی 30 پولبک قبل شکست داشتیم برای همین یک تایم پایین تر از تایم تریگر رفتیم یعنی 5 دقیقه.<br/><br/><br/><a href="https://youtu.be/9F_Anm3t8Ug?si=Kqu7yRo9sJO4uZtQ">https://youtu.be/9F_Anm3t8Ug?si=Kqu7yRo9sJO4uZtQ</a><br/><br/>14:40 دقیقه<br/></li></ul><p id="194174ad-223a-800f-b90b-f62b6b791802" class="">
+</p></div></figure><hr id="194174ad-223a-806f-99d4-dd91af316dd8"/><h2 id="194174ad-223a-8161-b54d-cdd872ed5622" class="">ستاپ فالس بریک اوت</h2><p id="194174ad-223a-802d-9730-df6239f65f69" class="">
+</p><h3 id="194174ad-223a-80ee-a76c-c23dfbbef126" class=""><strong>ستاپ فالس بریک‌اوت (False Breakout Setup)</strong></h3><h3 id="194174ad-223a-8089-9000-dbb27d357661" class=""><strong>🔹 تعریف فالس بریک‌اوت:</strong></h3><p id="194174ad-223a-80e0-8eb6-c2ef19d8c3ae" class="">فالس بریک‌اوت زمانی رخ می‌دهد که قیمت از یک سطح حمایت یا مقاومت عبور می‌کند اما به‌سرعت بازمی‌گردد و شکست تأیید نمی‌شود. این اتفاق معمولاً باعث <strong>گیر افتادن معامله‌گران مبتدی</strong> می‌شود که تصور می‌کنند شکست واقعی رخ داده است.</p><h3 id="194174ad-223a-8041-9a24-dfee336f5fbf" class=""><strong>🔹 ویژگی‌های فالس بریک‌اوت:</strong></h3><ol type="1" id="194174ad-223a-80b5-9577-dd36b1d15d95" class="numbered-list" start="1"><li><strong>نفوذ قیمت به سطح کلیدی:</strong> قیمت به‌طور موقت از سطح حمایت یا مقاومت عبور می‌کند.</li></ol><ol type="1" id="194174ad-223a-80ce-9e31-df7997f9b823" class="numbered-list" start="2"><li><strong>عدم تثبیت بالای/پایین سطح:</strong> کندل‌های تأییدی پس از شکست شکل نمی‌گیرند.</li></ol><ol type="1" id="194174ad-223a-80ee-b615-d2f3252a9038" class="numbered-list" start="3"><li><strong>بازگشت سریع قیمت:</strong> قیمت به محدوده قبلی بازمی‌گردد و شکست را نامعتبر می‌کند.</li></ol><ol type="1" id="194174ad-223a-80a7-af13-d45645e37370" class="numbered-list" start="4"><li><strong>حجم معاملات خاص:</strong> معمولاً در لحظه شکست حجم معاملات افزایش می‌یابد، اما پس از بازگشت، کاهش پیدا می‌کند.</li></ol><h3 id="194174ad-223a-80b9-ae5e-d132d38bdd75" class=""><strong>🔹 انواع فالس بریک‌اوت:</strong></h3><p id="194174ad-223a-80cb-ae80-eabf55ea9945" class="">✅ <strong>۱. فالس بریک‌اوت در روند رنج:</strong></p><ul id="194174ad-223a-806d-a2b9-dbb54baf1cdd" class="bulleted-list"><li style="list-style-type:disc">قیمت از محدوده رنج عبور کرده، اما دوباره به آن بازمی‌گردد.</li></ul><ul id="194174ad-223a-8083-9a55-e20e0eb8313f" class="bulleted-list"><li style="list-style-type:disc">نشانه‌ای از فریب معامله‌گران و تله نقدینگی است.</li></ul><p id="194174ad-223a-8083-b350-f06b84423c8e" class="">✅ <strong>۲. فالس بریک‌اوت در روند صعودی/نزولی:</strong></p><ul id="194174ad-223a-8023-84f3-e8e975d00f29" class="bulleted-list"><li style="list-style-type:disc">در یک روند صعودی، قیمت بالاتر از مقاومت نفوذ می‌کند اما دوباره به زیر آن برمی‌گردد.</li></ul><ul id="194174ad-223a-8062-a0ca-f60634112ab4" class="bulleted-list"><li style="list-style-type:disc">در روند نزولی، قیمت زیر حمایت نفوذ می‌کند اما دوباره بالاتر می‌آید.</li></ul><p id="194174ad-223a-80f1-b5a4-c67f28baeb9b" class="">✅ <strong>۳. فالس بریک‌اوت به‌عنوان تریگر ورود:</strong></p><ul id="194174ad-223a-8079-b81f-f748abdd9bfb" class="bulleted-list"><li style="list-style-type:disc">وقتی قیمت شکست نامعتبر را نشان دهد، می‌توان از آن برای ورود در جهت مخالف استفاده کرد.</li></ul><h3 id="194174ad-223a-804b-a8e0-ce2a477fefe9" class=""><strong>🔹 استراتژی معامله با فالس بریک‌اوت:</strong></h3><ol type="1" id="194174ad-223a-80d1-ad3e-e34349297d11" class="numbered-list" start="1"><li><strong>تأیید کندلی:</strong> صبر کنید تا کندل بازگشتی تأیید کند که شکست واقعی نیست.</li></ol><ol type="1" id="194174ad-223a-808b-97fa-faa1a89ab157" class="numbered-list" start="2"><li><strong>بررسی حجم معاملات:</strong> حجم معاملات باید نشانه‌هایی از بازگشت را نشان دهد.</li></ol><ol type="1" id="194174ad-223a-8094-b2a2-dbc302d80695" class="numbered-list" start="3"><li><strong>مشاهده رفتار قیمت در تایم فریم‌های پایین‌تر:</strong> بررسی در تایم‌های کوچک‌تر می‌تواند اطلاعات دقیق‌تری ارائه دهد.</li></ol><ol type="1" id="194174ad-223a-8029-bc77-f701924d8e20" class="numbered-list" start="4"><li><strong>ورود پس از تأیید شکست جعلی:</strong> ورود در خلاف جهت شکست، با حد ضرر نزدیک به سطح شکست انجام می‌شود.</li></ol><p id="194174ad-223a-8098-bd40-e378ca71655e" class="">✅ <strong>مثال:</strong></p><ul id="194174ad-223a-8081-a3af-cb0417a05214" class="bulleted-list"><li style="list-style-type:disc">اگر قیمت مقاومت <strong>۱.۲۰۰۰</strong> را بشکند و تا <strong>۱.۲۰۲۰</strong> برود، اما به زیر <strong>۱.۲۰۰۰</strong> بازگردد، احتمال فالس بریک‌اوت زیاد است و می‌توان وارد معامله فروش شد.</li></ul><h3 id="194174ad-223a-800b-adcf-e28cc0a52cc5" class=""><strong>🔹 نتیجه‌گیری:</strong></h3><p id="194174ad-223a-8016-985a-dc263dc92767" class="">فالس بریک‌اوت یکی از <strong>تله‌های رایج در بازار</strong> است که باعث فریب معامله‌گران ناآگاه می‌شود. با تحلیل دقیق <strong>رفتار قیمت، تأیید شکست و بررسی تایم فریم‌های پایین‌تر</strong> می‌توان از آن به‌عنوان یک فرصت معاملاتی استفاده کرد. ✅</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="194174ad-223a-8006-affa-df6a49671d44"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="194174ad-223a-805d-9f41-cbc55046307f" class=""><em><strong>توضیحات مبسوط درباره فالس بریک اوت</strong></em><br/><br/><mark class="highlight-default"><strong><br/>در این ویدیو توضیحات مبسوطی درباره فالس بریک اوت داده شده که با رعایت نکات گفته شد میتوان برای این رفتار ستاپ در نظر گرفت<br/></strong></mark><br/><br/><br/><a href="https://www.youtube.com/watch?v=NglTyDDTnEg&amp;list=PLIrUFalA2o4nGjpPdjksJ7gj7XC7aUOYW&amp;index=18">https://www.youtube.com/watch?v=NglTyDDTnEg&amp;list=PLIrUFalA2o4nGjpPdjksJ7gj7XC7aUOYW&amp;index=18</a></p></div></figure><h3 id="194174ad-223a-80b9-92ec-f6520ff05855" class="">نمونه شماتیک از فالس بریک اوت در کانال صعودی<br/><br/></h3><p id="195174ad-223a-80eb-ae40-f8ac6ae9f1fc" class="">با شکست اولین زون مینور بعد فالس بریک اوت میتواند با تشکیل ستاپ ورود کرد</p><p id="194174ad-223a-808f-a8d0-cb5375c5999a" class="">
+</p><figure id="194174ad-223a-8071-9435-c39b6f943b57" class="image"><a href="image%2013.png"><img style="width:709.9609375px" src="image%2013.png"/></a></figure><h3 id="195174ad-223a-8044-8219-c0eaa924ff4f" class="">ستاپ فالس بریک اوت&gt;&gt;<mark class="highlight-purple">پولبک بعد شکست</mark></h3><p id="195174ad-223a-80c0-9533-c98489b91d49" class=""><br/>وقتی <br/><strong>فالس بریک‌اوت</strong> رخ می‌دهد، باید منتظر واکنش قیمت به اولین <strong>زون مینور</strong> بمانیم تا با تشکیل <strong>ستاپ مناسب</strong> بتوانیم موقعیت‌گیری کنیم. یکی از این <strong>ستاپ‌ها</strong>، <strong>ستاپ پولبک پس از شکست</strong> در <strong>فالس بریک‌اوت</strong> است.<br/><br/><br/></p><h3 id="195174ad-223a-809a-bd34-f740e7016ce5" class="">نمونه شماتیک از پولبک بعد شکست در ستاپ فالس بریک اوت<br/><br/></h3><p id="195174ad-223a-8010-8578-f74b2100e7fa" class="">وقتی قیمت به عنوان مثال در یک کانال نزولی هست و ترند لاین ماژور پایین کانال رو میشکنه دچار فالس بریک اوت و اشباع فروش میشه و با شکست مججد اولین زون مینور به سمت روند الگو میتوان با پولبک بعد شکست استفاده کرد و نقطه ورود گرفت<br/><br/></p><figure id="195174ad-223a-80ab-bccd-c0395c3b51db" class="image"><a href="image%2014.png"><img style="width:709.9609375px" src="image%2014.png"/></a></figure><h3 id="195174ad-223a-805b-a8c5-e9a5e33b2972" class="">نمونه شماتیک از ورود با واکنش به 50/61 درصد پولبک</h3><p id="195174ad-223a-8010-aca7-eb00bbd720cc" class="">
+</p><figure id="195174ad-223a-8012-98fe-f6268c72bb8a" class="image"><a href="image%2015.png"><img style="width:709.9609375px" src="image%2015.png"/></a></figure><h3 id="195174ad-223a-80d0-8c19-d99d61143eb0" class="">سوال: تایم تریگر در ستاپ فالس بریک اوت میتواند دو تایم فریم پایین تر باشد؟ اگر اره با چه شرایطی</h3><h3 id="195174ad-223a-8088-a25f-dfbe6d8a7e95" class="">نمونه شماتیک<br/><br/></h3><figure id="195174ad-223a-80d7-ba6f-cc6214715de6" class="image"><a href="f85f2d98-d1d2-4759-a520-39cc18214c04.png"><img style="width:696.551724137931px" src="f85f2d98-d1d2-4759-a520-39cc18214c04.png"/></a></figure><p id="195174ad-223a-80a1-86ac-da26bbe81260" class="">در سناریو ورود با واکنش به 50/61 درصد پولبک همیشه یک تایم پایین تر از تایم ساختار برای تریگر میریم<br/>برای نمونه برای ساختار 30 دقیقه به تایم 15 دقیقه میریم<br/>ولی اگر در تایم 15 دقیقه واکنش های مینور دیده نشد یا در حد یک کندل بودن<br/>میتوان به یک تایم پایین تر طبق فرمول تایم های فراکتالی به تایم 5 دقیقه برای مشاهده واکنش و تایید گرفتن نسبت به واکشن ها هست<br/><br/>برای توضیحات مبسوط تر میتوان به ویدیو زیر مراجعه کرد<br/><br/><br/><a href="https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20">https://www.youtube.com/watch?v=cfqRiSTPAUc&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=20</a><br/>دقیقه 28:00<br/><br/><br/><br/></p><h3 id="195174ad-223a-80cd-b72c-e503028195bc" class="">نمونه معاملاتی از واکشن به 50 /61 درصد <br/><br/><br/></h3><figure id="195174ad-223a-80ac-85fb-e9f50a8800d8" class="image"><a href="image%2016.png"><img style="width:709.9609375px" src="image%2016.png"/></a></figure><p id="195174ad-223a-80a8-8d38-ce6acfcb70fb" class=""><mark class="highlight-gray">ستاپ فالس بریک اوت و پولبک بعد شکست</mark></p><p id="195174ad-223a-80d9-99f6-d565277fbc16" class=""><mark class="highlight-gray">تایم فریم ساختار 15 دقیقه</mark></p><p id="195174ad-223a-8029-85fd-ea4f5de85b68" class=""><mark class="highlight-gray">تایم تریگر 3 دقیقه بر اساس مشاهده واکنش های مینور یا کندل های قرمز و سبز.<br/><br/><br/><br/></mark></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="195174ad-223a-8072-b296-ef0b69b2ff35"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="195174ad-223a-80e2-b4ff-d38068e5bf9f" class="">ویدیو نمونه معاملاتی<br/><br/><br/><a href="https://www.youtube.com/watch?v=EzWwtGo0zAo&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=23">https://www.youtube.com/watch?v=EzWwtGo0zAo&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=23</a><br/><br/>دقیقه 6:00<br/></p></div></figure><h3 id="195174ad-223a-80cc-bf30-f2ba83d3c73e" class="">ستاپ فالس بریک اوت &gt;&gt; <mark class="highlight-purple">عبور از سقف پولبک یا حرکت تا 90 درصد<br/><br/><br/><br/></mark><mark class="highlight-default">ما همیشه منتظر واکنش مینور تریگر میمانیم که قیمت واکنش بدهد و تریگر تایید شود ولی در مواقعی هیچ واکنش مینور شکل نمیگره که در اینجا به این موضوع خواهیم پرداخت که چگونه میتوانیم در این مواقعه ستاپ بگیریم<br/><br/><br/>نمونه شماتیک<br/></mark><mark class="highlight-purple"><br/><br/><br/></mark></h3><figure id="195174ad-223a-80e0-99a8-e7582650cc0f" class="image"><a href="30105a29-dd3e-4ecc-812e-9fbe6a03b1ed.png"><img style="width:705.6768558951965px" src="30105a29-dd3e-4ecc-812e-9fbe6a03b1ed.png"/></a></figure><h3 id="195174ad-223a-808a-b24a-ce8babb08233" class="">نمونه معاملاتی<br/><br/><br/></h3><figure id="195174ad-223a-802d-bace-c772b2445024" class="image"><a href="image%2017.png"><img style="width:709.9609375px" src="image%2017.png"/></a></figure><figure id="195174ad-223a-8025-b6a9-f8d4f8887845" class="image"><a href="image%2018.png"><img style="width:600px" src="image%2018.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="195174ad-223a-80e1-a429-ce6748c55473"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="195174ad-223a-80de-abc0-cf89805a1988" class="">ویدیو نمونه معاملاتی با عبور قیمت از کف یا سقف پولبک<br/><br/><br/><a href="https://www.youtube.com/watch?v=9F_Anm3t8Ug&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=24">https://www.youtube.com/watch?v=9F_Anm3t8Ug&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=24</a><br/><br/>دقیقه 5:00<br/></p></div></figure><h3 id="195174ad-223a-8084-9f45-e7f8c4a38596" class="">ستاپ فالس بریک اوت&gt;&gt;<mark class="highlight-purple">پولبک قبل شکست<br/><br/></mark></h3><p id="195174ad-223a-8036-b0cb-d68c7a205a71" class="">مثل توضیحات بالا برای عبور قیمت از سقف یا 90 درصد پولبک بعد شکست در <mark class="highlight-purple">پولبک قبل شکست</mark> هم اگر قیمت یک واکنش مینور در تایم تریگر نداد میتوان از روش شبیه به روش بالا استفاده کرد</p><p id="195174ad-223a-80c8-86a0-f2a799e38717" class="">در پولبک قبل شکست اگر قیمت توانست مسیر بین زون شکسته شده و زون تی پی رو 50 درصد فیبو رد کنه میتوان تریگر و روند رو تایید کرد و نقطه ورود تنظیم کرد که اگر قیمت اصلاح ماژور داشته باشه نقطه ورود ما فعال بشه<br/><br/></p><ul id="195174ad-223a-801e-9ffb-fa2fa7eee323" class="bulleted-list"><li style="list-style-type:disc">استثنا: اگر فاصل زون ها کم بود قیمت تا 38 درصد یا بین 38 درصد و 50 درصد حرکت کنه مشکلی نداره</li></ul><h3 id="195174ad-223a-8007-aff8-ebeaf10c2d72" class="">نمونه شماتیک<br/><br/><br/></h3><figure id="195174ad-223a-80bd-9d1a-d12254983310" class="image"><a href="da20e0d0-83f7-415b-8c1a-8b42ad5a6923.png"><img style="width:697.1757925072047px" src="da20e0d0-83f7-415b-8c1a-8b42ad5a6923.png"/></a></figure><h3 id="195174ad-223a-80c7-962d-c196ec24f6aa" class="">نمونه معاملاتی</h3><figure id="195174ad-223a-80d2-a789-c39373affcb7" class="image"><a href="image%2019.png"><img style="width:709.94140625px" src="image%2019.png"/></a></figure><p id="195174ad-223a-8030-ac53-ea72e03ecd10" class=""><mark class="highlight-purple"><br/><br/></mark></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="195174ad-223a-80ba-8ee5-d48cea433e61"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="195174ad-223a-8042-9e4f-e033523f61e3" class="">ویدیو نمونه موقعیت معاملاتی <br/><br/><br/><a href="https://www.youtube.com/watch?v=bCtLEaKU-7U&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=22">https://www.youtube.com/watch?v=bCtLEaKU-7U&amp;list=PLIrUFalA2o4mVR3EsxQSiHcH63glDKn3F&amp;index=22</a><br/><br/>دقیقه 15:00<br/></p></div></figure><h3 id="195174ad-223a-802a-9052-f5e3dbcf5d05" class="">ستاپ فالس بریک اوت&gt;&gt; <mark class="highlight-purple">پولبک اصلاح قیمتی</mark><br/><br/></h3><p id="195174ad-223a-80a8-bb68-d6cdafd30123" class="">در موارد بالا به دو پولبک بعد شکست و قبل شکست در ستاپ فالس بریک اوت پرداخته شد در مواقعی قیمت بعد فالس بریک اوت به اولین زون مینور بی احترامی میکنه و پولبک اصلاح قیمتی میزنه که در اینجا باید قوانین مربوط به پولبک اصلاح قیمتی رو دنبال کرد که در بالا در بخش ستاپ اصلاح قیمتی به این موضوع پرداخته شده است<br/><br/><br/></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="195174ad-223a-8062-9bd3-ee9a94703136"><div style="font-size:1.5em"><span class="icon">🚨</span></div><div style="width:100%"><p id="195174ad-223a-80f7-90df-d0ff40ae78b3" class="">توجه: در ستاپ فالس بریک اوت با سناریو پولبک های قبل و بعد شکست میتوانیم به دو تایم فریم پایین تر برای تریگر و مشاهده واکشن ها بریم ولی در ستاپ فالس بریک اوت با پولبک اصلاح قیمتی این مورد <mark class="highlight-red"><strong><span style="border-bottom:0.05em solid">مجاز نیست</span></strong></mark> به جز در <a href="https://www.notion.so/194174ad223a8018b6f6eb4f57e284d2?pvs=21">ستاپ اصلاح قیمتی </a><mark class="highlight-purple"><a href="https://www.notion.so/194174ad223a8018b6f6eb4f57e284d2?pvs=21">با پولبک قبل شکست</a></mark></p></div></figure><h3 id="195174ad-223a-8099-9119-f85e2c9d9e1b" class="">نمونه شماتیک<br/><br/><br/></h3><figure id="195174ad-223a-8018-b32c-d06daaa1e72c" class="image"><a href="a0e20d92-2a58-47ab-a1cc-0e6f119319ae.png"><img style="width:693.5622317596567px" src="a0e20d92-2a58-47ab-a1cc-0e6f119319ae.png"/></a></figure><h3 id="195174ad-223a-80b3-964b-cbda71cdc91f" class="">نمونه معاملاتی<br/><br/></h3><figure id="195174ad-223a-800e-8f54-f4e196d756e9" class="image"><a href="image%2020.png"><img style="width:709.9609375px" src="image%2020.png"/></a></figure><figure id="195174ad-223a-804b-a40e-e7f076e749fe" class="image"><a href="image%2021.png"><img style="width:709.9609375px" src="image%2021.png"/></a></figure><figure id="195174ad-223a-80c7-9e06-f159834a3586" class="image"><a href="image%2022.png"><img style="width:709.9609375px" src="image%2022.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="195174ad-223a-8089-bcdf-cd21bdab6957"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><p id="195174ad-223a-802d-a648-c907ce0efc09" class="">نمونه ویدیو موقعیت معاملاتی<br/><br/><br/><a href="https://www.youtube.com/watch?v=9F_Anm3t8Ug">https://www.youtube.com/watch?v=9F_Anm3t8Ug</a><br/>14:30 دقیقه<br/></p></div></figure><hr id="194174ad-223a-818f-a30c-f0a5c56e2122"/><p id="195174ad-223a-8043-adfd-e7c11089f84e" class="">
+</p><h3 id="195174ad-223a-80fc-a71c-f072dfc7e7ef" class=""><strong>با آرزوی موفقیت برای شما در مسیر یادگیری و پیشرفت</strong> 🌱📖✨</h3><p id="195174ad-223a-8093-8bbd-f5d8fe6d1359" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
